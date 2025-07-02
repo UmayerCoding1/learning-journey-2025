@@ -1,12 +1,23 @@
-# React + Vite
+# 1. What is Redux?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Redux is a state management library for JavaScript applications. It is a predictable state container for your application. It is a state management pattern that allows you to have a single source of truth for your application's state.
 
-Currently, two official plugins are available:
+# 2. What are the benefits of using Redux?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Redux provides a predictable state management pattern for your application. It makes it easier to manage and update the state of your application. It also makes it easier to test your application.
 
-## Expanding the ESLint configuration
+# 3. What is Redux action?
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+An action is a function that updates the state of the application. It is dispatched to the store.
+
+# 4. What is Redux reducer?
+
+A reducer is a function that updates the state of the application. It is dispatched to the store.
+
+# 5. What is Redux store?
+
+A store is a container for the state of the application. It is a single source of truth for the state of the application.
+
+# 6. What is Redux dispatch?
+
+A dispatch is a function that updates the state of the application. It is dispatched to the store.
