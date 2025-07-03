@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { addBook } from "../features/booksSlice";
-const BookForm = ({bookToEdit,onCancel}) => {
+import { addBook, updateBook } from "../features/booksSlice";
+const BookForm = ({ bookToEdit, onCancel }) => {
   const [formData, setFormData] = useState({
     title: "",
     author: "",
@@ -16,16 +16,26 @@ const BookForm = ({bookToEdit,onCancel}) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
- useEffect(() => {
+  useEffect(() => {
     if (bookToEdit) {
-        setFormData(bookToEdit)
+      setFormData(bookToEdit);
     }
- }, [bookToEdit])
+  }, [bookToEdit]);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    dispatch(addBook({ ...formData, id: nanoid() }));
+    if (bookToEdit) {
+     dispatch(updateBook(formData));
+    } else {
+      dispatch(addBook({ ...formData, id: nanoid() }));
+    }
+
+    setFormData({
+      title: "",
+      author: "",
+      price: "",
+    });
   };
 
   return (
@@ -58,9 +68,16 @@ const BookForm = ({bookToEdit,onCancel}) => {
           required
         />
 
-        <input className={bookToEdit ? 'btn-info': 'btn-success'} type="submit" value={bookToEdit ? 'Update Book' : "Add Books"} />
-        {bookToEdit && <button onClick={() => onCancel()} className="btn-denger">Clear</button>}
-       
+        <input
+          className={bookToEdit ? "btn-info" : "btn-success"}
+          type="submit"
+          value={bookToEdit ? "Update Book" : "Add Books"}
+        />
+        {bookToEdit && (
+          <button onClick={() => onCancel()} className="btn-denger">
+            Clear
+          </button>
+        )}
       </form>
     </div>
   );
