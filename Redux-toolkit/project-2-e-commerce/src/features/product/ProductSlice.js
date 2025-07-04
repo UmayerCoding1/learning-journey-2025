@@ -14,8 +14,8 @@ const BASE_URL = 'http://localhost:3003'
 });
 
  export const deleteProducts  = createAsyncThunk('products/deleteProducts',async(id) =>{
-   const res = await axios.delete(`${BASE_URL}/${id}`);
-   return res.data
+   const res = await axios.delete(`${BASE_URL}/products/${id}`);
+   return id;
 });
 export const productSlice = createSlice({
    name: 'products',
@@ -37,6 +37,10 @@ export const productSlice = createSlice({
       state.isLoaading = false,
       state.products = [];
       state.error = actios.error.message || "Failed to fetch data";
+    });
+
+     builder.addCase(deleteProducts.fulfilled, (state,actios) => {
+      state.products = state.products.filter(product => product.id !== actios.payload);
     });
    }
 });

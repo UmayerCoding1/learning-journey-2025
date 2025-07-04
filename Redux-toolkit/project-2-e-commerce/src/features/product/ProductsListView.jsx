@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { fetchProducts } from './ProductSlice';
+import { deleteProducts, fetchProducts } from './ProductSlice';
 const ProductsListView = () => {
     const {isLoaading,products,error} = useSelector((stste) => stste.productsR);
     const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const ProductsListView = () => {
                     <article className=' bg-gray-100 shadow-md border border-gray-200 rounded-lg p-2 transition-all ease-in-out duration-200 hover:bg-gray-200' key={inx}>
                          <h2 className='text-2xl font-medium'>{product.title}</h2>
                          <p>{product.description}</p>
+                         <button onClick={() => dispatch(deleteProducts(product.id))} className='bg-gray-300 px-2 py-1 rounded-md border border-gray-200 hover:bg-gray-400 cursor-pointer'>Delete</button>
                     </article>
                 )
             })}
