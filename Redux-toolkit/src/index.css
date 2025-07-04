@@ -1,12 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body{
-    padding: 10px;
-}
+@import "tailwindcss";
+
+
 
 
 .article{
@@ -15,3 +10,6 @@ body{
     margin: 5px 0;
 }
 
+.product{
+    padding: 5px;
+}

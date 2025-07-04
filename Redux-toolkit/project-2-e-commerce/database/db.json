@@ -1,25 +1,75 @@
 {
   "products": [
-    {
-      "id": 1,
-      "title": "Essence Mascara Lash Princess",
-      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-      "category": "beauty",
-      "price": 9.99
-    },
-    {
-      "id": 2,
-      "title": "Essence Mascara Lash Princess 2 ",
-      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-      "category": "beauty",
-      "price": 9.99
-    },
-    {
-      "id": 3,
-      "title": "Essence Mascara Lash Princess 3 ",
-      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-      "category": "beauty",
-      "price": 9.99
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Essence Mascara Lash Princess",
+    "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+    "category": "beauty",
+    "price": 9.99
+  },
+  {
+    "id": 2,
+    "title": "Maybelline Fit Me Matte Foundation",
+    "description": "Lightweight matte foundation that fits your skin tone and texture. Provides buildable coverage for a natural, flawless look.",
+    "category": "beauty",
+    "price": 12.99
+  },
+  {
+    "id": 3,
+    "title": "L'Oréal Paris Infallible Lipstick",
+    "description": "Long-wear lipstick with intense color payoff and a hydrating finish. Stays put for up to 24 hours.",
+    "category": "beauty",
+    "price": 11.49
+  },
+  {
+    "id": 4,
+    "title": "Neutrogena Hydro Boost Gel Cream",
+    "description": "Hydrating face moisturizer with hyaluronic acid that quenches dry skin and keeps it smooth and supple.",
+    "category": "beauty",
+    "price": 14.89
+  },
+  {
+    "id": 5,
+    "title": "NYX Professional Makeup Epic Ink Liner",
+    "description": "Waterproof liquid eyeliner with a precise brush tip for sharp, smudge-proof definition.",
+    "category": "beauty",
+    "price": 8.99
+  },
+  {
+    "id": 6,
+    "title": "e.l.f. Cosmetics Blemish Control Primer",
+    "description": "A primer that fights blemishes while prepping your skin for makeup with a smooth finish.",
+    "category": "beauty",
+    "price": 7.00
+  },
+  {
+    "id": 7,
+    "title": "Revlon ColorStay Pressed Powder",
+    "description": "A long-wearing pressed powder that controls shine and leaves a flawless finish.",
+    "category": "beauty",
+    "price": 10.29
+  },
+  {
+    "id": 8,
+    "title": "Milani Baked Blush",
+    "description": "Highly pigmented blush with a radiant finish. Easy to blend for a healthy-looking flush.",
+    "category": "beauty",
+    "price": 9.79
+  },
+  {
+    "id": 9,
+    "title": "The Ordinary Niacinamide 10% + Zinc 1%",
+    "description": "A high-strength vitamin and mineral formula to reduce the appearance of blemishes and congestion.",
+    "category": "beauty",
+    "price": 6.50
+  },
+  {
+    "id": 10,
+    "title": "Cetaphil Gentle Skin Cleanser",
+    "description": "A mild, non-irritating cleanser perfect for sensitive skin. Hydrates while it cleanses.",
+    "category": "beauty",
+    "price": 11.25
+  }
+]
+
 }
