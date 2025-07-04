@@ -15,7 +15,16 @@ const BASE_URL = 'http://localhost:3003'
 
  export const deleteProducts  = createAsyncThunk('products/deleteProducts',async(id) =>{
    const res = await axios.delete(`${BASE_URL}/products/${id}`);
+   console.log(res.data);
+   
    return id;
+});
+
+
+ export const createProducts  = createAsyncThunk('products/createProduct',async(product) =>{
+   const res = await axios.post(`${BASE_URL}/products`,product);
+   console.log("Product Created successfully",res.data);
+   
 });
 export const productSlice = createSlice({
    name: 'products',

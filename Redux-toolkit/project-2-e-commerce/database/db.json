@@ -48,6 +48,18 @@
       "description": "A high-strength vitamin and mineral formula to reduce the appearance of blemishes and congestion.",
       "category": "beauty",
       "price": 6.5
+    },
+    {
+      "id": "8nHGCaQMMSfvkEGgAPuTQ",
+      "title": "product 1",
+      "price": "12",
+      "description": "13134"
+    },
+    {
+      "id": "hFmnC7k9YtiHK2ZQfqolq",
+      "title": "product 2",
+      "price": "3000.00",
+      "description": "car"
     }
   ]
 }
