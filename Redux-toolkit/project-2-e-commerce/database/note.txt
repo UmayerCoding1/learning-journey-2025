@@ -1,0 +1,9 @@
+==> How to create a bummy json server
+
+1. Install npm json-server 
+ => npm i json-server
+
+2.Create a folder name like database and create a file on this folder db.json and add dummy data;
+
+3. Start json server 
+ => npx json-server -p 3003 -w database/db.json

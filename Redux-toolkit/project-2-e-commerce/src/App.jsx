@@ -1,9 +1,10 @@
 import React from 'react';
+import ProductsListView from './features/product/ProductsListView';
 
 const App = () => {
   return (
     <div className=''>
-      app
+      <ProductsListView /> 
     </div>
   );
 };
