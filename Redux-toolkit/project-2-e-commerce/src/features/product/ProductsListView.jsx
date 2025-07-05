@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProducts, fetchProducts } from "./ProductSlice";
-const ProductsListView = () => {
+const ProductsListView = ({onHandleSetProductToEdit}) => {
   const { isLoaading, products, error } = useSelector(
     (stste) => stste.productsR
   );
@@ -12,6 +12,10 @@ const ProductsListView = () => {
     dispatch(fetchProducts());
   }, []);
 
+
+  const handleEdit = (ptoduct) => {
+       onHandleSetProductToEdit(ptoduct)
+  }
   if (isLoaading) {
     return <p>Loading . . . </p>;
   }
@@ -33,12 +37,21 @@ const ProductsListView = () => {
                 <h2 className="text-2xl font-medium">{product.title}</h2>
                 <p> ${product.price}</p> 
                 <p>{product.description}</p> 
+               <div className="flex gap-3 items-center my-2">
+                 <button
+                 type="button"
+                  onClick={() => handleEdit(product)}
+                  className="bg-blue-300 px-2 py-1 rounded-md border border-gray-200 hover:bg-blue-400 cursor-pointer"
+                >
+                  Edit
+                </button>
                 <button
                   onClick={() => dispatch(deleteProducts(product.id))}
                   className="bg-gray-300 px-2 py-1 rounded-md border border-gray-200 hover:bg-gray-400 cursor-pointer"
                 >
                   Delete
                 </button>
+               </div>
               </article>
             );
           })}

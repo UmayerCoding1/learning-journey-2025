@@ -23,8 +23,14 @@ const BASE_URL = 'http://localhost:3003'
 
  export const createProducts  = createAsyncThunk('products/createProduct',async(product) =>{
    const res = await axios.post(`${BASE_URL}/products`,product);
-   console.log("Product Created successfully",res.data);
-   
+  return res.data
+});
+
+export const updateProduct = createAsyncThunk('products/updateProduct', async ({ id, product }) => {
+  console.log(id,product);
+  
+  const res = await axios.put(`${BASE_URL}/products/${id}`, product);
+  return res.data;
 });
 export const productSlice = createSlice({
    name: 'products',
@@ -50,6 +56,16 @@ export const productSlice = createSlice({
 
      builder.addCase(deleteProducts.fulfilled, (state,actios) => {
       state.products = state.products.filter(product => product.id !== actios.payload);
+    });
+
+    builder.addCase(createProducts.fulfilled, (state,actios) => {
+      state.products.push = actios.payload;
+    });
+
+    builder.addCase(updateProduct.fulfilled, (state,actios) => {
+      const index = state.products.findIndex((product) => product.id === actios.payload.id);
+
+      state.products[index] = actios.payload;
     });
    }
 });

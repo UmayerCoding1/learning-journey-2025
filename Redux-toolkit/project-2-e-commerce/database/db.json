@@ -1,25 +1,10 @@
 {
   "products": [
     {
-      "id": "3",
-      "title": "L'Oréal Paris Infallible Lipstick",
-      "description": "Long-wear lipstick with intense color payoff and a hydrating finish. Stays put for up to 24 hours.",
-      "category": "beauty",
-      "price": 11.49
-    },
-    {
       "id": "4",
-      "title": "Neutrogena Hydro Boost Gel Cream",
-      "description": "Hydrating face moisturizer with hyaluronic acid that quenches dry skin and keeps it smooth and supple.",
-      "category": "beauty",
-      "price": 14.89
-    },
-    {
-      "id": "5",
-      "title": "NYX Professional Makeup Epic Ink Liner",
-      "description": "Waterproof liquid eyeliner with a precise brush tip for sharp, smudge-proof definition.",
-      "category": "beauty",
-      "price": 8.99
+      "title": "Neutrogena Hydro Boost Gel Cream ",
+      "price": 14.89,
+      "description": "Hydrating face moisturizer with hyaluronic acid that quenches dry skin and keeps it smooth and supple."
     },
     {
       "id": "6",
@@ -41,25 +26,6 @@
       "description": "Highly pigmented blush with a radiant finish. Easy to blend for a healthy-looking flush.",
       "category": "beauty",
       "price": 9.79
-    },
-    {
-      "id": "9",
-      "title": "The Ordinary Niacinamide 10% + Zinc 1%",
-      "description": "A high-strength vitamin and mineral formula to reduce the appearance of blemishes and congestion.",
-      "category": "beauty",
-      "price": 6.5
-    },
-    {
-      "id": "8nHGCaQMMSfvkEGgAPuTQ",
-      "title": "product 1",
-      "price": "12",
-      "description": "13134"
-    },
-    {
-      "id": "hFmnC7k9YtiHK2ZQfqolq",
-      "title": "product 2",
-      "price": "3000.00",
-      "description": "car"
     }
   ]
 }
