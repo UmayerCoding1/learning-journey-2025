@@ -4,7 +4,7 @@ import  postReducr  from "../features/post/PostSlice";
 
 const store = configureStore({
     reducer: {
-        counter: counterReducer,
+        counter:  counterReducer,
         post: postReducr
     }
 });
