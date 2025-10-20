@@ -1,0 +1,12 @@
+GET / 1.1 localhost:5000  IP: ::1
+GET /favicon.ico 1.1 localhost:5000  IP: ::1
+GET /test 1.1 localhost:5000  IP: ::1
+GET /favicon.ico 1.1 localhost:5000  IP: ::1
+GET /text/umayer/123 1.1 localhost:5000  IP: ::1
+GET /favicon.ico 1.1 localhost:5000  IP: ::1
+GET /text/umayer/123 1.1 localhost:5000  IP: ::1
+GET /favicon.ico 1.1 localhost:5000  IP: ::1
+GET / 1.1 localhost:5000  IP: ::1
+GET /favicon.ico 1.1 localhost:5000  IP: ::1
+GET /about 1.1 localhost:5000  IP: ::1
+GET /favicon.ico 1.1 localhost:5000  IP: ::1
