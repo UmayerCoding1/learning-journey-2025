@@ -55,6 +55,14 @@
     </ul>
   </div>
 </nav>
+<% if (locals.error) { %>
+  <div class="absolute top-2 left-0 w-full">
+    <p class="p-3 bg-red-300  text-center font-semibold">
+      <%= locals.error %>
+    </p>
+  </div>
+<% } %>
+
 
 <script>
   const menuBtn = document.getElementById('menu-btn');
