@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include('partials/head') %>
+    <title>Home Page</title>
+</head>
+<body>
+    <%- include('partials/nav') %>
+       <div class="mx-20 my-5 flex flex-col gap-10">
+            <form action="/user/signup" method="post">
+                <div>
+                <label for="name" class="font-bold">Full Name</label><br>
+                <input 
+                type="text" 
+                name="fullname" 
+                placeholder="Enter your name" 
+                id="fullname"
+                class="w-full h-10 pl-1 oitline-none border border-gray-300 rounded-lg"
+                >
+            </div>
+            <div>
+                <label for="name" class="font-bold">Email</label><br>
+                <input 
+                type="email" 
+                name="email" 
+                placeholder="Enter your email" 
+                id="email"
+                class="w-full h-10 pl-1 oitline-none border border-gray-300 rounded-lg"
+                >
+            </div>
+            <div>
+                <label for="name" class="font-bold">Password</label><br>
+                <input 
+                type="password" 
+                name="password" 
+                placeholder="Enter your password" 
+                id="password"
+                class="w-full h-10 pl-1 oitline-none border border-gray-300 rounded-lg"
+                >
+            </div>
+
+            <button class="bg-blue-500 px-3 py-2 text-white rounded-lg font-mediam">Sign Up</button>
+            </form>
+       </div>
+    <%- include('partials/script') %>
+</body>
+</html>
