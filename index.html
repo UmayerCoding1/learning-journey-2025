@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Upload Example</title>
 </head>
 <body>
-     <h1>Node.js Video Streaming</h1>
+  <h1>Upload Your PDF</h1>
 
-     <div>
-        <video width="720" controls>
-            <source src="http://localhost:5000/video" type="video/mp4">
-        </video>
-     </div>
+  <div>
+    <form id="pdf-form">
+      <input type="file" accept="application/pdf" name="pdf" required />
+      <button type="submit">Upload PDF</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('pdf-form');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // page reload stop
+
+      const file = e.target.pdf.files[0];
+      if (!file) return alert('Please select a PDF file.');
+
+      const formData = new FormData();
+      formData.append('pdf', file);
+
+      try {
+        const response = await fetch('http://localhost:5000/pdf', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        console.log('Success:', data);
+        resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+
+        form.reset(); // optional: reset file input
+      } catch (error) {
+        console.error('Error:', error);
+        resultDiv.textContent = 'Error uploading PDF';
+      }
+    });
+  </script>
 </body>
 </html>

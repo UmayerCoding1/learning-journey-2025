@@ -1,37 +1,29 @@
 import React from 'react';
 
 const App = () => {
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-     const file = e.target.file.files[0];
+    formData.append('pdf', e.target.pdf.files[0]);
 
-    console.log('d')
-    formData.append('file', file);
-    fetch('http://localhost:5000/upload', {
+    const response = await fetch('http://localhost:5000/pdf', {
       method: 'POST',
       body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    });
+
+    const data = await response.json();
+    document.getElementById('result').innerText = data.result;
   }
   return (
-    <div className='h-screen flex flex-col items-center justify-center'>
-      <h1 className='text-2xl font-bold'>File Upload </h1>
+    <div>
+      <div className='bg-blue-300 w-[400px] h-60'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-4 p-4'>
+      <input type="file" accept="application/pdf" name="pdf" required />
+      <button className='bg-black text-white p-2 text-sm font-medium' type="submit">Upload PDF</button>
+    </form>
 
-
-      <div className='mt-10 bg-neutral-200 p-10 rounded-2xl'>
-         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <input type="file" name="file" className='border p-1 rounded-lg border-neutral-300' />
-          <button type="submit" className='bg-blue-500 p-2 cursor-pointer'>Upload</button>
-         </form>
-      </div>
+  </div>
+    <div id="result"></div>
     </div>
   );
 };
