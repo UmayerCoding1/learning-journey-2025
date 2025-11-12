@@ -42,11 +42,31 @@ const Dashboard: React.FC = () => {
             width: '4.5rem',
         }
     }
+
+    const parentVariant = {
+        open: {
+            transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+        },
+        closed: {
+            transition: { staggerChildren: 0.05, staggerDirection: -1 }
+        }
+    }
+
+    const childVariant = {
+        open: {
+            opacity: 1,
+            y: 0
+        },
+        closed: {
+            opacity: 0,
+            y: -20
+        }
+    }
     return (
         <div className="min-h-screen bg-gray-50 font-sans flex">
             {/* Sidebar */}
             <motion.div
-             initial={false}
+            initial={false}
             animate={isSidebarOpen ? 'open' : 'closed'}
             variants={sidebarVerient}
 
@@ -55,8 +75,8 @@ const Dashboard: React.FC = () => {
             }}
             >
                 <motion.aside
-             variants={sidebarVerient}
-
+           variants={sidebarVerient}
+            
             className="w-56 bg-white border-r border-gray-200 p-6 hidden md:block">
                 <div className="text-xl font-bold mb-6 flex items-center justify-between ">
                    { isSidebarOpen && <span>Dashboard</span>}
@@ -64,9 +84,10 @@ const Dashboard: React.FC = () => {
                         {isSidebarOpen ? ( <IconArrowBadgeLeft className='cursor-pointer hover:bg-gray-100 rounded-md'/> ) : ( <IconArrowBadgeRight className='cursor-pointer hover:bg-gray-100 rounded-md'/> )}
                     </button>
                 </div>
-                <nav className="space-y-2">
+                <motion.nav variants={parentVariant} className="space-y-2">
                     {navItems.map((n) => (
-                        <button
+                        <motion.button
+                        variants={childVariant}
                             key={n.id}
                             onClick={() => setActive(n.id)}
                             className={`flex items-center gap-3 w-full text-left px-3 py-2 rounded-lg ${
@@ -75,9 +96,9 @@ const Dashboard: React.FC = () => {
                         >
                             <span className="w-6 text-center">{n.icon}</span>
                              { isSidebarOpen && <span>{n.label}</span>}
-                        </button>
+                        </motion.button>
                     ))}
-                </nav>
+                </motion.nav>
             </motion.aside>
             </motion.div>
 
