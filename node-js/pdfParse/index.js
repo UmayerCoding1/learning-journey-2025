@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post("/pdf", upload.single("pdf"), async (req, res) => {
+app.post("/pdf-parse", upload.single("pdf"), async (req, res) => {
   const pdfFile = req.file;
   console.log(pdfFile);
   const parser = new PDFParse({ url: pdfFile.path });
