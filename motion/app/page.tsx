@@ -3,10 +3,7 @@ import React from 'react';
 
 const page = () => {
   const classes  = [
-    {
-      name: 'Class 1',
-      link: '/class-1'
-    },
+   
     {
       name: 'Class 2',
       link: '/class-2'
